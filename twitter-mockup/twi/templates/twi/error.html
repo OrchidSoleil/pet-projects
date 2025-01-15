@@ -1,0 +1,19 @@
+{% extends 'twi/layout.html' %}
+
+{% block title %}
+  <title>Error</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="posts">
+    <div class="single-post">
+        <p>
+            {% if message %}
+                {{ message }}
+            {% endif %}
+        </p>
+    </div>
+</div>
+
+{% endblock %}
