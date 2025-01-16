@@ -1,0 +1,25 @@
+{% extends "bids/layout.html" %}
+{% load humanize %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    {% for listing in listings %}
+     <div class="active-listing">
+         <div class="img-active-listing">
+             <a href="{% url 'listing' listing.id %}">
+             <img src="{{ listing.image_path }}"  width="150" alternative="{{ listing.item_name }}"></a>
+         </div>
+         <div class="p-active-listing">
+            <a class="a-active-listing" href="{% url 'listing' listing.id %}">{{ listing.item_name }}</a>
+              {{ listing.description }}
+            <br><br>
+              <b>Price:</b> <span style="font-weight: ; font-size: 18px;">
+                ${{ listing.starting_bid|floatformat:2|intcomma }}
+               </span>
+          </div>
+       </div>
+    {% empty %}
+        <span>No active listings.</span>
+    {% endfor %}
+{% endblock %}

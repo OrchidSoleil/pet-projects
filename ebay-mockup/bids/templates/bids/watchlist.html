@@ -1,0 +1,23 @@
+{% extends 'bids/layout.html' %}
+{% load humanize %}
+
+{% block title %}
+    Watchlist - Bids
+{% endblock %}
+
+{% block body %}
+    <h4>Watchlist</h4>
+    <hr>
+
+        {% for item in watchlist %}
+          <div class="active-listing">
+                 <img src="{{ item.image_path }}" width="100">
+                  <div class="p-active-listing"><a class="a-active-listing" href="{% url 'listing' item.id %}">{{ item.item_name }},
+                     ${{ item.starting_bid|floatformat:2|intcomma }}
+                  </a></div>
+          </div>
+        {% empty %}
+        <p>Nothing in your watchlist.</p>
+        {% endfor %}
+
+{% endblock %}

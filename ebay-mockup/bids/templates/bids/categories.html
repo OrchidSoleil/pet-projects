@@ -1,0 +1,35 @@
+{% extends 'bids/layout.html' %}
+
+{% block title %}
+    Categories - Auction
+{% endblock %}
+
+{% block body %}
+    <h4>Categories</h4>
+    <hr>
+    <div>
+    <p><ul class="nav">
+        <a class="nav-link" href="{% url 'categories' 'Fashion' %}">Fashion</a>
+        <a class="nav-link" href="{% url 'categories' 'Toys' %}">Toys</a>
+        <a class="nav-link" href="{% url 'categories' 'Electronics' %}">Electronics</a>
+        <a class="nav-link" href="{% url 'categories'  'Home' %}">Home</a>
+        <a class="nav-link" href="{% url 'categories'  'Office' %}">Office</a>
+        <a class="nav-link" href="{% url 'categories'  'Other' %}">Other</a></p>
+      </ul>
+    </div>
+    <hr>
+    {% if category %}
+         <h5>Category: {{ category }}</h5>
+      {% for listing in listings %}
+         <div class="active-listing">
+          <a class="a-active-listing" href="{% url 'listing' listing.id %}">
+            <img src="{{ listing.image_path }}" width="100"></a>
+            <div class="p-active-listing">
+            <a class="a-active-listing" href="{% url 'listing' listing.id %}">
+              {{ listing.item_name }}</a></div>
+         </div>
+      {% empty %}
+        <p>No active listings for this category.</p>
+      {% endfor %}
+    {% endif %}
+{% endblock %}

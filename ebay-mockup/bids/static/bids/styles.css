@@ -1,0 +1,153 @@
+body {
+    padding: 10px;
+    background-color: #ae947b;
+    color: #87593a;
+}
+
+div.main {
+    text-align: center;
+}
+
+.active-listing {
+    border-top: solid #224220 0px;
+    background-color: #d9d2ca;
+    padding: 5px;
+    margin: 5px;
+    color: #4a3120;
+    display: flex;
+}
+
+div.active-listing:hover {
+    background-color: #d4c7b5;
+}
+
+a.a-active-listing {
+   color: #97632c;
+   text-decoration-line: underline;
+}
+
+div.img-active-listing {
+    width: 150px;
+    border: solid black 0px;
+}
+
+div.p-active-listing {
+    width: auto;
+    border: solid black 0px;
+    padding: 7px;
+}
+
+img {
+    border: #97632c solid 2px;
+}
+
+a.nav-link {
+    color: #d9d2ca;
+    text-transform: uppercase;
+    font-size:17px;
+    text-shadow: 0px 1px #87593a;
+}
+
+a.nav-link:hover {
+    text-decoration-line: overline;
+}
+
+input#login-button, input#register-button {
+    background-color: #ab7032;
+    border: solid #ab7032 1px;
+
+}
+
+a.on-dark {
+    color: #d9d2ca;
+    text-decoration-line: underline;
+}
+
+a.home {
+    color: #87593a;
+}
+
+img.listing {
+    width: 450px;
+    border: #97632c solid 2px;
+}
+
+span.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p.message {
+    background-color: #d9d2ca;
+    color: red;
+    font-size: 16px;
+    padding: 2px;
+
+}
+
+button.typical {
+    background-color: #97632c;
+    color: #d9d2ca;
+    border: solid 2px #87593a;
+}
+
+input, textarea, select {
+    background-color: #d9d2ca;
+    color: #87593a;
+    border: inset 2px #b8a18b;
+}
+
+textarea {
+    width: 450px;
+    height: 150px;
+}
+
+div.bid {
+    display: flex;
+    position: relative;
+    border: 0px dotted red;
+    padding: 2px;
+}
+
+div.field {
+    border: dashed 0px yellow;
+    width: 100%;
+}
+div.inline-button {
+    position: absolute;
+    top: 2px;
+    left: 105px;
+    width: auto;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+button {
+    border: solid 2px #87593a;
+    color: #87593a;
+}
+
+.comment-author {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.comment-date {
+    font-weight: normal;
+    font-size: 12px;
+}
+.comment-text {
+    font-size: 14px;
+    color: #4a3120;
+}
+
+h1 {
+    color: #d9d2ca;
+    text-shadow: 0px 2px #87593a;
+}
+
+h1 a:hover {
+    text-decoration: overline;
+}

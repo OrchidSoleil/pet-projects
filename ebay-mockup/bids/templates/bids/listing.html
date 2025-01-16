@@ -1,0 +1,81 @@
+{% extends 'bids/layout.html' %}
+{% load humanize %}
+
+{% block body %}
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+
+    {% if listing %}
+     <div class="active-listing">
+       <div><img class="listing" src="{{ listing.image_path }}"></div>
+       <div class="p-active-listing">
+        <h4>Listing: {{ listing.item_name }}</h4>
+        <p>{{ listing.description }}</p>
+        <span class="price">${{ biggest_bid|default:listing.starting_bid|floatformat:2|intcomma }}</span>
+
+          {% if user.is_authenticated %}
+
+            {% if listing.is_active %}
+            <div class="bid">
+              <form action="{% url 'place-bid' listing.id %}" method='Post'>
+                {% csrf_token %}
+                <div class="field">
+                  {{ form }}</div>
+                  <div class="inline-button">
+                     <button class="typical" type="submit">Place Bid</button>
+                    </div>
+              </form>
+            </div>
+            {% endif %}
+
+            <div class="bid">
+              <form action="{% url 'add-to-watchlist' listing.id %}" method='Post'>
+                {% csrf_token %}
+                <button type="submit" style="background-color: {{ color }};">Watchlist</button>
+              </form>
+            </div>
+
+
+              {% if winner == user %}
+                <h5>Congratulations! You won this auction.</h5>
+             {% endif %}
+
+           {% if user == listing.seller and listing.is_active %}
+              <form action="{% url 'close-auction' listing.id %}" method='Post'>
+                {% csrf_token %}
+                <button class="typical" type="submit" value="">Close Auction</button>
+              </form>
+            {% endif %}
+       {% endif %}
+
+       <h5><br>Details:</h5>
+
+        <p>Listed by: {{ listing.seller }} on {{ listing.date_posted }}</p>
+        <p>Category: {{ listing.category }}</p>
+       </div>
+      </div>
+
+      <br>
+      <h5>Comments</h5>
+       <hr>
+         <form action="{% url 'comment' listing.id %}" method="Post">
+           {% csrf_token %}
+           {{ comment_form }}
+           <button class="typical" type="submit">Comment</button>
+         </form>
+           {% for comment in comments %}
+             <div><hr>
+               <div>
+                 <p><span class="comment-author"> ★ {{ comment.author }}</span>
+                    <span class="comment-date">{{ comment.date_added }}</span></p></div>
+                <div>
+                  <p class="comment-text">{{ comment.comment_text }}</p></div>
+              </div>
+
+            {% empty %}
+              <p> No comments yet</p>
+           {% endfor %}
+    {% endif %}
+
+{% endblock %}
