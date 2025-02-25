@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   {{ _('Home') }}
+{% endblock %}
+
+{% block main %}
+<div class="main-menu">
+   <img src="static/img/cassandra1.png" class="main" alt="Lesia Ukrainka's Cassandra"><br>
+   <li><a href="/game">{{ _('New Game') }}</a></li>
+   <li>{{ _('Choose language') }}</li>
+   <li><a href="{{ url_for('set_language', language='uk') }}">Українська</a> <a href="{{ url_for('set_language', language='en') }}">English</a></li>
+   <!--<li><form action="{{ url_for('set_language') }}" method='POST'><select name='language'><option value="uk">Українська</option></select><button>Go</button></form></li>
+   --><li><a href="/about.html">{{ _('About') }}</a></li>
+</div>
+
+{% endblock %}
+

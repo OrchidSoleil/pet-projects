@@ -9,3 +9,15 @@ db.sqlite3
 *.env
 venv/
 env/
+!.env.example
+.pem
+
+# Flask
+.schema
+.schema_player
+tables
+config.py
+cfg.env
+*.pem
+*.prod
+*.staging

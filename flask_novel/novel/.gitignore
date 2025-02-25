@@ -1,0 +1,7 @@
+venv
+.schema
+.schema_player
+tables
+*.pyc
+config.py
+cfg.env

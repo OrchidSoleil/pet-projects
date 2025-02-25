@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ _('Game') }}
+{% endblock %}
+
+
+{% block main %}
+
+
+    <div id="game-img">
+      <img src="{{ img_path }}" class="main" alt="Corridor in Palace of Priam, St Sophia Kyiv">
+    </div>
+    <div id="game-text" class="container-sm">
+      <h3 id="location">{{ location }},  {{ chapter }}</h3>
+      
+        <p id="story">{{ story_text }}</p>
+        <hr>
+        {% for choice in choices %}
+            <p class="choice" choice-text="{{ choice }}" choice-outcome="{{ choices[choice] }}"> {{ choice }}</p>
+        {% endfor %}
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+
+
+{% endblock %}

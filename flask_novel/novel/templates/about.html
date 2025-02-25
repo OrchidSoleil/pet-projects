@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ _('About') }}
+{% endblock %}
+
+{% block main%}
+<img src="static/img/cassandra2.png" class="main" alt="Lesia Ukrainka's Cassandra"><br>
+{% if msg %}
+    <h1>{{ msg[0][0] }}</h1>
+    <p>{{ _("I hope you liked this story, that was written by prominent Ukrainian writer of XIX century, Lesia Ukrainka.") }}</p>
+    <h3>{{ _("Chapters") }}</h3>
+    <h4>
+        <li><a href="/game">{{ _("ACT I") }}</a></li>   
+    </h4>
+    <hr>
+{% endif %}
+<h2>{{ _("About this Game") }}</h2>
+<p>{{ _("This game was created as a final project for CS50 Harvard course. 
+    I used Flask framework, sqlite3 database, some javascript, AJAX and some bootstrap.
+    Artwork is made using Midjourney.com.") }}
+</p>
+<h2></h2>
+<p></p>
+{% endblock %}

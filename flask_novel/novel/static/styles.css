@@ -1,0 +1,165 @@
+html, body {
+    background-color:black;
+    color: orangered;
+    font-size: 18px;
+}
+
+
+
+@media (max-width: 415px) {
+
+    body {
+        font-size: 24px;
+    }
+    img.main {
+        width: 374px;
+    }
+
+    div#game-title {
+        width: 374px;
+
+    }     
+}
+
+
+nav {
+    background-color: fuchsia;
+    color: pink;
+    width: 700px;
+    border-style: ridge;
+    border-width: 1px;
+    border-color: blueviolet;
+}
+nav.a {
+    color: pink;
+}
+li {
+    list-style: none;
+}
+
+li.a {
+    color: palevioletred;
+}
+
+a {
+    color: orangered;
+}
+a:hover {
+    color: palevioletred;
+}
+
+div.container-sm {
+    content: 100%;
+    position: relative;
+}
+
+div.main-menu {
+    
+    text-align: center;
+}
+
+
+.meatball-menu {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .meatball {
+    width: 7px;
+    height: 7px;
+    background-color: orangered;
+    border-radius: 50%;
+    margin: 3px 0;
+  }
+  
+
+div.dropdown {
+    display: inline;
+    
+}
+
+a.lang {
+    text-decoration: none;
+    color:black;
+}
+a.lang:hover {
+    background-color: #ffeeee;    
+}
+
+ul.dropdown-menu {
+    background-color: pink;
+    color: black;
+}
+/*
+div#top-menu {
+    width: 700px;
+    border-style: groove;
+    border-width: 3px;
+    border-color: rgb(226, 162, 43);
+}*/
+
+
+div#game-title {
+
+    width: 700px;
+    border-style: dotted;
+    border-width: 1px;
+    border-color: orangered;
+}
+
+ div#game-window { /*
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;*/
+    /*
+    display: block;*/
+    width: 700px;
+    height: auto; /*
+    border-style: dashed;
+    border-width: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-color: pink;*/
+    padding: 5px; /*inside the div*/
+}
+div#game-img { /*
+    display: block; 
+    width: 100%; */
+    height: 600px; /*
+    border-width: 2px;
+    border-color: purple;*/
+    margin-bottom: 5px; /*outside the div*/
+}
+div#game-text { /*
+    display: block; */
+    width: 100%; 
+    height: auto;
+    color: pink;
+    background-color: black;/*
+    border-style: dotted;
+    border-width: 1px;
+    border-color: pink;*/
+    padding: 5px; /*inside the div*/
+}
+
+p.choice:hover {
+    background-color: blueviolet;
+}
+
+h3#location {
+    background-color: pink;
+    color: black;
+}
+
+img.main {
+    width: 100%;/*
+    border-style: double;
+    border-width: 3px;
+    border-color: violet; /*
+    border-right: 1px;
+    border-left: 1px;*/
+}
+
