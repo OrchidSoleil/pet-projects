@@ -4,16 +4,11 @@ import sqlite3
 from flask import Flask, flash, redirect, render_template, request, session, jsonify, url_for, send_from_directory
 from flask_session import Session
 from tempfile import mkdtemp
-from werkzeug.security import check_password_hash, generate_password_hash
-from werkzeug.exceptions import UnsupportedMediaType
 from flask_babel import Babel, gettext, _
 from dotenv import load_dotenv
 from flask_talisman import Talisman
-
-# ===============#
+# =============== #
 from flask_sqlalchemy import SQLAlchemy
-
-# from helpers import login_required, lookup
 
 
 # configure localization
@@ -188,30 +183,7 @@ def get_data(outcome):
     finally:
         cursor.close()
         conn.close()
-        print(game_data)
         return game_data
-
-    # this might be obsolete at this point, keeping it for now for tracking
-    # conn = sqlite3.connect('game.db')
-    # cursor = conn.cursor()
-    # try:
-    #     cursor.execute("""
-    #         SELECT story.story_text, story.location, story.chapter, story.img_path, choice.choice_text, outcome.next_story_id
-    #         FROM outcome
-    #         INNER JOIN story ON outcome.story_id = story.story_id
-    #         INNER JOIN choice ON outcome.choice_id = choice.choice_id
-    #         WHERE story.story_id = ?;
-    #     """, (outcome,))
-    #     game_data = cursor.fetchall()
-    # except Exception as e:
-    #     error_message = gettext(u'There was a problem with your request. Please try again later.')
-    #     game_data = [(error_message, "", "", "","","")]
-    #     print(str(e), '500')
-    # finally:
-    #     cursor.close()
-    #     conn.close()
-    #     print(game_data)
-    #     return game_data
 
 
 @app.route('/gameover', methods=["GET", "POST"])
@@ -225,38 +197,6 @@ def gameover():
 @app.route("/about.html")
 def about():
     return render_template("about.html")
-
-# this feature might be implemented later
-# @app.route("/add_user")
-# def add_user():
-    # conn = sqlite3.connect("mydatabase.db")  # Replace with your database name
-#     cursor = conn.cursor()
-#     cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", ("user1", "hashed_password"))
-#     conn.commit()
-#     conn.close()
-#     return "User added successfully!"
-
-# basic db functions
-# def get_db_connection():
-#     conn = sqlite3.connect('your_database.db')
-#     cursor = conn.cursor()
-#     return conn, cursor
-
-# def close_db_connection(conn):
-#     conn.commit()
-#     conn.close()
-
-# def some_function():
-#     conn, cursor = get_db_connection()
-
-#     # Use the cursor to execute your queries
-#     cursor.execute('SELECT * FROM your_table')
-#     data = cursor.fetchall()
-
-#     close_db_connection(conn)
-
-# # Call the function
-# some_function()
 
 
 if __name__ == '__main__':
