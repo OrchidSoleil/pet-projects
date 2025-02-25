@@ -1,0 +1,3 @@
+# SITEMAPS
+Sitemap: https://www.vendr.com/sitemap.xml
+Sitemap: https://www.vendr.com/sitemap_marketplace.xml
